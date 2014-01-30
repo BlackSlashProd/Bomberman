@@ -1,0 +1,1123 @@
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Kidnappeur' method 'init': postcondition error
+  ==> getInvulnerableStep() != 0
+
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [11;14].
+DROITE
+
+Tours de jeu restants : 499
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [2;3].
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Haut
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en haut en [10;14].
+
+Tours de jeu restants : 498
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Bas, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+BOMBE
+
+Tours de jeu restants : 497
+Le joueur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le joueur pose une bombe de force 6 en [2;3] de force 5.
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le kidnappeur a le choix parmis : [Bas, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+GAUCHE
+
+Tours de jeu restants : 496
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [10;14].
+
+Tours de jeu restants : 495
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Bas, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 4 en [10;14] de force 3.
+BAS
+
+Tours de jeu restants : 494
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [3;2].
+Le kidnappeur a le choix parmis : [Bas, Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+BAS
+
+Tours de jeu restants : 493
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [4;2].
+Le kidnappeur a le choix parmis : [Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+
+Tours de jeu restants : 492
+Une bombe de force 6 explose en [2;3].
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+BOMBE
+
+Tours de jeu restants : 491
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 6 en [4;2] de force 5.
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le kidnappeur a le choix parmis : [Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+BAS
+
+Tours de jeu restants : 490
+Une bombe de force 4 explose en [10;14].
+1 vilain(s) mort(s) dans l'explosion !
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [5;2].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur veut poser une bombe en [10;13] mais echoue !
+BAS
+
+Tours de jeu restants : 489
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [6;2].
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a pris le bonus : FireUp
+
+Tours de jeu restants : 488
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Bas, Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bas
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en bas en [11;12].
+DROITE
+
+Tours de jeu restants : 487
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [6;3].
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+DROITE
+
+Tours de jeu restants : 486
+Une bombe de force 6 explose en [4;2].
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [6;4].
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 6 en [11;12] de force 5.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+BOMBE
+
+Tours de jeu restants : 485
+Le joueur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le joueur pose une bombe de force 6 en [6;4] de force 5.
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le kidnappeur a le choix parmis : [Haut, Bas]
+Le kidnappeur a choisi l'action : Bas
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en bas en [12;12].
+
+Tours de jeu restants : 484
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [12;13].
+DROITE
+
+Tours de jeu restants : 483
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [6;5].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+DROITE
+
+Tours de jeu restants : 482
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [6;6].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [12;14].
+BOMBE
+
+Tours de jeu restants : 481
+Une bombe de force 6 explose en [11;12].
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 6 en [6;6] de force 5.
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+Le joueur a ete devore par un vilain !
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+GAUCHE
+Service 'Moteur' method 'step': postcondition error
+  ==> getNbBombes(getJoueur(step(Bombe))) != getNbBombes(getJoueur())
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur devrait etre mort mange par un vilain
+
+Tours de jeu restants : 480
+Une bombe de force 6 explose en [6;4].
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+1 vilain(s) mort(s) dans l'explosion !
+Le joueur est mort dans l'explosion !
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+GAUCHE
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur devrait etre mort dans l'explosion d'une bombe
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur devrait etre mort mange par un vilain
+
+Tours de jeu restants : 479
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+GAUCHE
+
+Tours de jeu restants : 478
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+GAUCHE
+
+Tours de jeu restants : 477
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+GAUCHE
+
+Tours de jeu restants : 476
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != nUne bombe de force 6 explose en [6;6].
+
+Le joueur est mort dans l'explosion !
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [12;13] de force 5.
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur devrait etre mort dans l'explosion d'une bombe
+
+Tours de jeu restants : 475
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [12;14].
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur aurait du pouvoir aller a gauche a ce tour, la case est vide !
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+BAS
+
+Tours de jeu restants : 474
+Le joueur a choisi l'action : Bas
+Le joueur butte contre un mur en voulant aller en bas
+Le kidnappeur a le choix parmis : [Haut]
+Le kidnappeur a choisi l'action : Haut
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en haut en [11;14].
+GAUCHE
+
+Tours de jeu restants : 473
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Haut, Bas, Rien]
+Le kidnappeur a choisi l'action : Bas
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en bas en [12;14].
+BAS
+
+Tours de jeu restants : 472
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [7;2].
+Le joueur a pris le bonus : WallPass
+Le kidnappeur a le choix parmis : [Haut]
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition errorLe kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [11;14].
+
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+
+Tours de jeu restants : 471
+Une bombe de force 6 explose en [12;13].
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [11;14] de force 5.
+HAUT
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+
+Tours de jeu restants : 470
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [6;2].
+Le kidnappeur a le choix parmis : [Haut, Bas]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [10;14].
+DROITE
+
+Tours de jeu restants : 469
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [6;3].
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [9;14].
+Le kidnappeur a pris le bonus : FireSuit
+DROITE
+
+Tours de jeu restants : 468
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [6;4].
+Le kidnappeur a le choix parmis : [Haut]
+Le kidnappeur a choisi l'action : Haut
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en haut en [8;14].
+HAUT
+
+Tours de jeu restants : 467
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [5;4].
+Le kidnappeur a le choix parmis : [Haut, Bas, Gauche, Rien]
+Le kidnappeur a choisi l'action : Bas
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en bas en [9;14].
+HAUT
+
+Tours de jeu restants : 466
+Une bombe de force 6 explose en [11;14].
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [4;4].
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Haut
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en haut en [8;14].
+HAUT
+
+Tours de jeu restants : 465
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [3;4].
+Service 'Joueur' method 'addReward': postcondition error
+  ==> getNbBombePosable(addReward(reward)) != getNbBombePosable() + 1
+Le joueur a pris le bonus : BombUp
+Le kidnappeur a le choix parmis : [Haut, Bas, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [8;14] de force 5.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+
+Tours de jeu restants : 464
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Bas, Gauche]
+Le kidnappeur a choisi l'action : Bas
+Le kidnappeur va en bas en [9;14].
+BAS
+
+Tours de jeu restants : 463
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [4;4].
+Le kidnappeur a le choix parmis : [Bas]
+Le kidnappeur a choisi l'action : Bas
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en bas en [10;14].
+GAUCHE
+
+Tours de jeu restants : 462
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le joueur a pris le bonus : FireUp
+Le kidnappeur a le choix parmis : [Bas, Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+DROITE
+
+Tours de jeu restants : 461
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [4;4].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+DROITE
+
+Tours de jeu restants : 460
+Une bombe de force 6 explose en [8;14].
+Le joueur a choisi l'action : DroiteService 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+
+Le joueur va a droite en [4;5].
+Le kidnappeur a le choix parmis : [Haut, Bas, Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [10;13].
+
+Tours de jeu restants : 459
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+DROITE
+
+Tours de jeu restants : 458
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [4;6].
+Le kidnappeur a le choix parmis : [Haut, Bas, Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+BAS
+
+Tours de jeu restants : 457
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [5;6].
+Le joueur a pris le bonus : FireUp
+Le kidnappeur a le choix parmis : [Haut, Bas, Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+BAS
+BAS
+
+Tours de jeu restants : 456
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [6;6].
+Le kidnappeur a le choix parmis : [Haut, Bas, Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [10;13].
+BAS
+
+Tours de jeu restants : 455
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [7;6].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [10;13] de force 5.
+
+Tours de jeu restants : 454
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+BAS
+
+Tours de jeu restants : 453
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [8;6].
+Le joueur a pris le bonus : FireUp
+Le kidnappeur a le choix parmis : [Haut, Bas]
+Le kidnappeur a choisi l'action : Bas
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en bas en [11;12].
+BOMBE
+
+Tours de jeu restants : 452
+Le joueur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le joueur pose une bombe de force 12 en [8;6] de force 11.
+Le kidnappeur a le choix parmis : [Haut, Bas, Rien]
+Le kidnappeur a choisi l'action : Bas
+Le kidnappeur va en bas en [12;12].
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+
+Tours de jeu restants : 451
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a pris le bonus : BombUp
+BAS
+
+Tours de jeu restants : 450
+Une bombe de force 6 explose en [10;13].
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [9;6].
+Le kidnappeur a le choix parmis : [Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [12;11] de force 5.
+BOMBE
+
+Tours de jeu restants : 449
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur pose une bombe de force 12 en [9;6] de force 11.
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le kidnappeur a le choix parmis : [Droite]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [12;12].
+
+Tours de jeu restants : 448
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Droite, Bombe]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [12;13].
+HAUT
+
+Tours de jeu restants : 447
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Une bombe de force 12 explose en [8;6].
+Le joueur est mort dans l'explosion !
+Le kidnappeur a le choix parmis : [Droite, Bombe]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 6 en [12;13] de force 5.
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+HAUT
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur devrait etre mort dans l'explosion d'une bombe
+
+Tours de jeu restants : 446
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [8;6].
+Le kidnappeur a le choix parmis : [Droite]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [12;14].
+HAUT
+
+Tours de jeu restants : 445
+Une bombe de force 6 explose en [12;11].
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [7;6].
+Le kidnappeur a le choix parmis : [Haut, Bombe]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur veut poser une bombe en [12;14] mais echoue !
+BOMBE
+
+Tours de jeu restants : 444
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Une bombe de force 12 explose en [9;6].
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur est mort dans l'explosion !
+Le kidnappeur a le choix parmis : [Haut, Bombe]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [12;14] de force 5.
+BAS
+Service 'Moteur' method 'step': postcondition error
+
+Tours de jeu restants : 443
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [8;6].
+Le kidnappeur a le choix parmis : [Haut]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [11;14].
+  ==> le joueur devrait etre mort dans l'explosion d'une bombe
+Service 'Moteur' method 'step': postcondition error
+  ==> getNbBombes(getJoueur(step(Bombe))) != getNbBombes(getJoueur())
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+BAS
+
+Tours de jeu restants : 442
+Une bombe de force 6 explose en [12;13].
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [9;6].
+Le kidnappeur a le choix parmis : [Haut, Bombe]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [10;14].
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+DROITE
+
+Tours de jeu restants : 441
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Droite
+Le joueur butte contre un mur en voulant aller a droite
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+HAUT
+
+Tours de jeu restants : 440
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [8;6].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+DROITE
+BOMBE
+
+Tours de jeu restants : 439
+Une bombe de force 6 explose en [12;14].
+1 vilain(s) mort(s) dans l'explosion !
+Le joueur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur pose une bombe de force 12 en [8;6] de force 11.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+Service 'Moteur' method 'step': postcondition error
+  ==> getNbBombes(getJoueur(step(Bombe))) != getNbBombes(getJoueur())
+
+Tours de jeu restants : 438
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a pris le bonus : BombPass
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+DROITE
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+
+Tours de jeu restants : 437
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [8;7].
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'addReward': postcondition error
+  ==> getNbBombePosable(addReward(reward)) != getNbBombePosable() + 1
+Le joueur a pris le bonus : BombUp
+Le kidnappeur a le choix parmis : [Droite, Bombe, Rien]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [10;12].
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+
+Tours de jeu restants : 436
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Bas, Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [10;13].
+BOMBE
+DROITE
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+
+Tours de jeu restants : 435
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [8;8].
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 6 en [10;13] de force 5.
+DROITE
+
+Tours de jeu restants : 434
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Une bombe de force 12 explose en [8;6].
+1 vilain(s) mort(s) dans l'explosion !
+Le joueur est mort dans l'explosion !
+Le kidnappeur a le choix parmis : [Droite, Gauche]
+Le kidnappeur a choisi l'action : Droite
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va a droite en [10;14].
+Service 'Moteur' method 'step': postcondition error
+  ==> le joueur devrait etre mort dans l'explosion d'une bombe
+
+Tours de jeu restants : 433
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [9;14].
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+DROITE
+
+Tours de jeu restants : 432
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [8;9].
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Haut
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en haut en [8;14].
+
+Tours de jeu restants : 431
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur a le choix parmis : [Haut, Bas, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+BOMBE
+DROITE
+
+Tours de jeu restants : 430
+Une bombe de force 6 explose en [10;13].
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [8;10].
+Le kidnappeur a le choix parmis : [Haut, Bas, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Haut
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur va en haut en [7;14].
+
+Tours de jeu restants : 429
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le kidnappeur pose une bombe de force 6 en [7;14] de force 5.
+BOMBE
+
+Tours de jeu restants : 428
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 12 en [8;10] de force 11.
+Le kidnappeur a le choix parmis : [Haut, Bas]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [6;14].
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+BAS
+BAS
+
+Tours de jeu restants : 427
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [9;10].
+Le kidnappeur a le choix parmis : [Gauche, Bombe]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 6 en [6;14] de force 5.
+BAS
+
+Tours de jeu restants : 426
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [10;10].
+Service 'Joueur' method 'addReward': postcondition error
+  ==> getInvulnerableStep(addReward(reward)) != 100
+Le joueur a pris le bonus : FireSuit
+Le kidnappeur a le choix parmis : [Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+BAS
+
+Tours de jeu restants : 425
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [11;10].
+Le kidnappeur a le choix parmis : [Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+BAS
+
+Tours de jeu restants : 424
+Une bombe de force 6 explose en [7;14].
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [12;10].
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [5;12].
+Le kidnappeur a pris le bonus : FireUp
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+GAUCHE
+
+Tours de jeu restants : 423
+Une bombe de force 12 explose en [8;10].
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Joueur' method 'addReward': postcondition error
+  ==> getNbBombePosable(addReward(reward)) != getNbBombePosable() + 1
+Le joueur a pris le bonus : BombUp
+Le kidnappeur a le choix parmis : [Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+BOMBE
+GAUCHE
+
+Tours de jeu restants : 422
+Une bombe de force 6 explose en [6;14].
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+BOMBE
+
+Tours de jeu restants : 421
+Le joueur a choisi l'action : Bombe
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur pose une bombe de force 12 en [12;8] de force 11.
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Le kidnappeur a le choix parmis : [Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Le kidnappeur ne fait rien.
+GAUCHE
+
+Tours de jeu restants : 420
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Bas, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le kidnappeur pose une bombe de force 8 en [5;12] de force 7.
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+BOMBE
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+
+Tours de jeu restants : 419
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 12 en [12;7] de force 11.
+Le kidnappeur a le choix parmis : [Bas]
+Le kidnappeur a choisi l'action : Bas
+Le kidnappeur va en bas en [6;12].
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Joueur' method 'setNbBombePosable': postcondition error
+  ==> getNbBombePosable(setNbBombePosable(n)) != n
+Service 'Kidnappeur' method 'decrementeInvulnerabilite': postcondition error
+  ==> getInvulnerableStep(setInvulnerable()) != getInvulnerableStep() - 1
+GAUCHE
+
+Tours de jeu restants : 418
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Service 'Bombe': invariant error
+  ==> getAmplitude > 11
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Exception in thread "main" java.lang.IllegalArgumentException
+	at implementation.bug.Joueur.setForce(Joueur.java:26)
+	at implementation.bug.Joueur.addReward(Joueur.java:43)
+	at delegates.JoueurDecorator.addReward(JoueurDecorator.java:107)
+	at contrats.JoueurContrat.addReward(JoueurContrat.java:358)
+	at implementation.bug.Moteur.gestionJoueurs(Moteur.java:557)
+	at implementation.bug.Moteur.step(Moteur.java:897)
+	at delegates.MoteurDecorator.step(MoteurDecorator.java:109)
+	at contrats.MoteurContrat.step(MoteurContrat.java:320)
+	at main.MainBug.main(MainBug.java:29)

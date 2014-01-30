@@ -1,0 +1,165 @@
+Testsuite: tests.BombeBugTestContrat
+Tests run: 19, Failures: 1, Errors: 0, Time elapsed: 0,064 sec
+------------- Standard Error -----------------
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': precondition error
+  ==> colonne < 2
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': precondition error
+  ==> amplitude < 3
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': precondition error
+  ==> amplitude > 11
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe' method 'setTimer': precondition error
+  ==> timer < 0
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Bombe' method 'setTimer': precondition error
+  ==> timer > 10
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': precondition error
+  ==> ligne < 2
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': precondition error
+  ==> colonne >= terrain.getNbColonnes()
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': postcondition error
+  ==> getTimer() != 10
+Service 'Bombe' method 'init': postcondition error
+  ==> getAmplitude() != amplitude
+Service 'Joueur' method 'init': postcondition error
+  ==> getForce() != 3
+Service 'Joueur' method 'init': postcondition error
+  ==> passeMuraille() != false
+Service 'Bombe' method 'init': precondition error
+  ==> ligne >= terrain.getNbLignes()
+------------- ---------------- ---------------
+
+Testcase: test_pre_init_4 took 0,016 sec
+Testcase: test_pre_init_5 took 0,004 sec
+Testcase: test_pre_init_6 took 0,004 sec
+Testcase: test_pre_init_7 took 0,004 sec
+Testcase: test_pre_init_8 took 0,002 sec
+Testcase: test_pre_setTimer_1 took 0,003 sec
+Testcase: test_pre_setTimer_2 took 0,002 sec
+Testcase: test_inv_setTimer_1 took 0,002 sec
+Testcase: test_post_setTimer_1 took 0,002 sec
+Testcase: test_inv_getTimer_1 took 0,002 sec
+Testcase: test_inv_getLigne_1 took 0,001 sec
+Testcase: test_inv_getColonne_1 took 0,002 sec
+Testcase: test_inv_getAmplitude_1 took 0,001 sec
+Testcase: test_inv_getNum_1 took 0,001 sec
+Testcase: test_inv_getProprietaire_1 took 0,001 sec
+Testcase: test_pre_init_2 took 0,002 sec
+Testcase: test_pre_init_3 took 0,001 sec
+Testcase: test_post_init_1 took 0,005 sec
+	FAILED
+BombeService : init : post : init(joueur, 0, 2, 2, 3, terrain) donne une bombe avec un timer de 10
+junit.framework.AssertionFailedError: BombeService : init : post : init(joueur, 0, 2, 2, 3, terrain) donne une bombe avec un timer de 10
+	at tests.AbstractBombeTest.test_post_init_1(AbstractBombeTest.java:178)
+
+Testcase: test_pre_init_1 took 0,001 sec

@@ -1,0 +1,109 @@
+<project name="bomberman" default="compile" basedir="./bomberman">
+    <description>
+       Fichier de construction pour le projet de CPS : Bomberman
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="jars" location="jars"/>
+
+  <!-- METTRE ICI LE NOM DU BINOME -->
+  <property name="nom1" value="Alexis_DELUZE"/>
+  <property name="nom2" value="Clement_BARBIER"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac debug="true" classpath="${jars}/junit.jar" srcdir="${src}" excludes="" destdir="${build}" />
+  </target>
+
+  <target name="runIHM" depends="compile"
+          description="run application in release mode">
+    <echo>================ Run Main ================</echo>
+    <java classname="main.Main"
+          classpath="${build}">
+    </java>
+  </target>
+
+  <target name="run" depends="compile"
+          description="run application in release mode">
+    <echo>================ Run Main ================</echo>
+    <java classname="main.MainNoIHM"
+          classpath="${build}">
+    </java>
+  </target>
+  
+  <target name="runbug" depends="compile"
+          description="run application in release mode - bugged version">
+    <echo>================ Run MainBug ================</echo>
+    <java classname="main.MainNoIHMBug"
+          classpath="${build}">
+    </java>
+  </target>
+  
+  <target name="test" depends="compile"
+          description="tests">
+    <echo>================ Run tests ================</echo>
+    <junit printsummary="yes">
+      <classpath>
+        <pathelement location="${build}"/>
+        <pathelement location="${jars}/junit.jar"/>
+      </classpath>
+      <formatter type="plain"/>
+      <test name="tests.BlocTestContrat" outfile="test_bloc"/>
+	  <test name="tests.BombeTestContrat" outfile="test_bombe"/>
+	  <test name="tests.JoueurTestContrat" outfile="test_joueur"/>
+	  <test name="tests.KidnappeurTestContrat" outfile="test_kidnappeur"/>
+	  <test name="tests.VilainTestContrat" outfile="test_vilain"/>
+	  <test name="tests.TerrainTestContrat" outfile="test_terrain"/>
+	  <test name="tests.MoteurTestContrat" outfile="test_moteur"/>
+    </junit>
+	<echo>========= Traces generees dans le dossier bomberman ============</echo>
+  </target>
+  
+  <target name="testbug" depends="compile"
+          description="tests - bugged version">
+    <echo>================ Run tests ================</echo>
+    <junit printsummary="yes">
+      <classpath>
+        <pathelement location="${build}"/>
+        <pathelement location="${jars}/junit.jar"/>
+      </classpath>
+      <formatter type="plain"/>
+      <test name="tests.BlocBugTestContrat" outfile="test_bloc_bug"/>
+	  <test name="tests.BombeBugTestContrat" outfile="test_bombe_bug"/>
+	  <test name="tests.JoueurBugTestContrat" outfile="test_joueur_bug"/>
+	  <test name="tests.KidnappeurBugTestContrat" outfile="test_kidnappeur_bug"/>
+	  <test name="tests.VilainBugTestContrat" outfile="test_vilain_bug"/>
+	  <test name="tests.TerrainBugTestContrat" outfile="test_terrain_bug"/>
+	  <test name="tests.MoteurBugTestContrat" outfile="test_moteur_bug"/>
+    </junit>
+    <echo>========= Traces generees dans le dossier bomberman ============</echo>
+  </target>
+
+  <target name="dist" depends="init,clean"
+        description="Generer la distribution" >
+    <!-- tout mettre dans l'archive -->
+    <jar basedir="." jarfile="../Projet-CPS-Bomberman-${nom1}-${nom2}-${DSTAMP}.jar"
+    />
+  </target>
+
+  <target name="clean"
+        description="clean up" >	
+	<echo>================ Removing temporary files... ================</echo>
+        <delete verbose="true"> <!-- Remove all *~ files -->
+	   <fileset dir="${basedir}" defaultexcludes="no">
+             <include name="**/*~"/>
+           </fileset>
+        </delete>
+        <echo>================ Removing build directory ================</echo>    
+	<delete dir="${build}"/>
+  </target>
+</project>

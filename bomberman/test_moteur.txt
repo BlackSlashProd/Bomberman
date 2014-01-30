@@ -1,0 +1,189 @@
+Testsuite: tests.MoteurTestContrat
+Tests run: 14, Failures: 0, Errors: 0, Time elapsed: 6,063 sec
+------------- Standard Output ---------------
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 3 en [12;14] et d'id -500.
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Haut
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 3 en [12;14] et d'id -500.
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Gauche
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [2;3].
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [3;2].
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 3 en [2;2] et d'id 500.
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Gauche
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 3 en [12;14] et d'id -500.
+
+Tours de jeu restants : 499
+Le joueur a choisi l'action : Haut
+Le kidnappeur a le choix parmis : [Haut, Gauche]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [11;14].
+
+Tours de jeu restants : 498
+Le joueur a choisi l'action : Droite
+Le joueur va a droite en [2;3].
+Le kidnappeur a le choix parmis : [Haut]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [10;14].
+
+Tours de jeu restants : 497
+Le joueur a choisi l'action : Gauche
+Le joueur butte contre une bombe en voulant aller a gauche
+Le kidnappeur a le choix parmis : [Haut, Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 496
+Le joueur a choisi l'action : Bas
+Le joueur va en bas en [3;2].
+Le kidnappeur a le choix parmis : [Droite, Rien]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [10;14].
+
+Tours de jeu restants : 495
+Le joueur a choisi l'action : Haut
+Le joueur va en haut en [2;2].
+Le kidnappeur a le choix parmis : [Haut, Gauche]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [9;14].
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 3 en [2;2] et d'id 500.
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Haut
+Le kidnappeur va en haut en [11;14].
+
+Tours de jeu restants : 500
+Le joueur a choisi l'action : Bombe
+Le joueur pose une bombe de force 3 en [2;2] et d'id 500.
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 499
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Droite
+Le kidnappeur va a droite en [12;14].
+
+Tours de jeu restants : 498
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Gauche, Bombe, Rien]
+Le kidnappeur a choisi l'action : Bombe
+Le kidnappeur pose une bombe de force 3 en [12;14] et d'id -498.
+
+Tours de jeu restants : 497
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Haut, Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 496
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 495
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Gauche]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 494
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+
+Tours de jeu restants : 493
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+
+Tours de jeu restants : 492
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Rien
+Le kidnappeur ne fait rien.
+
+Tours de jeu restants : 491
+Le joueur a choisi l'action : Rien
+Le joueur ne fait rien.
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+
+Tours de jeu restants : 490
+Une bombe de force 3 explose en [2;2].
+Le joueur est mort dans l'explosion !
+Le kidnappeur a le choix parmis : [Droite, Gauche, Rien]
+Le kidnappeur a choisi l'action : Gauche
+Le kidnappeur butte contre une bombe en voulant aller a gauche
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+Service 'Moteur' method 'init': precondition error
+  ==> nbSteps <= 0
+Service 'Moteur' method 'step': precondition error
+  ==> a == null
+------------- ---------------- ---------------
+
+Testcase: test_post_init_1 took 0,013 sec
+Testcase: test_pre_init_1 took 0,001 sec
+Testcase: test_pre_step_1 took 0,002 sec
+Testcase: test_post_step_1 took 0,26 sec
+Testcase: test_post_step_2 took 0,251 sec
+Testcase: test_post_step_3 took 0,252 sec
+Testcase: test_post_step_4 took 0,251 sec
+Testcase: test_post_step_5 took 0,251 sec
+Testcase: test_post_step_6 took 0,252 sec
+Testcase: test_post_set_removed_explosions_1 took 0 sec
+Testcase: test_post_set_removed_explosions_2 took 0 sec
+Testcase: test_scen_util_1 took 1,507 sec
+Testcase: test_scen_util_2 took 0,251 sec
+Testcase: test_scen_util_3 took 2,763 sec

@@ -1,0 +1,40 @@
+Testsuite: tests.BombeTestContrat
+Tests run: 19, Failures: 0, Errors: 0, Time elapsed: 0,054 sec
+------------- Standard Error -----------------
+Service 'Bombe' method 'init': precondition error
+  ==> colonne >= terrain.getNbColonnes()
+Service 'Bombe' method 'init': precondition error
+  ==> ligne >= terrain.getNbLignes()
+Service 'Bombe' method 'init': precondition error
+  ==> ligne < 2
+Service 'Bombe' method 'init': precondition error
+  ==> colonne < 2
+Service 'Bombe' method 'init': precondition error
+  ==> amplitude < 3
+Service 'Bombe' method 'init': precondition error
+  ==> amplitude > 11
+Service 'Bombe' method 'setTimer': precondition error
+  ==> timer < 0
+Service 'Bombe' method 'setTimer': precondition error
+  ==> timer > 10
+------------- ---------------- ---------------
+
+Testcase: test_pre_init_3 took 0,016 sec
+Testcase: test_post_init_1 took 0,004 sec
+Testcase: test_pre_init_1 took 0,003 sec
+Testcase: test_pre_init_2 took 0,003 sec
+Testcase: test_pre_init_4 took 0,003 sec
+Testcase: test_pre_init_5 took 0,003 sec
+Testcase: test_pre_init_6 took 0,002 sec
+Testcase: test_pre_init_7 took 0,002 sec
+Testcase: test_pre_init_8 took 0,001 sec
+Testcase: test_pre_setTimer_1 took 0,001 sec
+Testcase: test_pre_setTimer_2 took 0,002 sec
+Testcase: test_inv_setTimer_1 took 0,001 sec
+Testcase: test_post_setTimer_1 took 0,001 sec
+Testcase: test_inv_getTimer_1 took 0,001 sec
+Testcase: test_inv_getLigne_1 took 0 sec
+Testcase: test_inv_getColonne_1 took 0,002 sec
+Testcase: test_inv_getAmplitude_1 took 0 sec
+Testcase: test_inv_getNum_1 took 0 sec
+Testcase: test_inv_getProprietaire_1 took 0,001 sec

@@ -1,0 +1,38 @@
+Testsuite: tests.BlocBugTestContrat
+Tests run: 19, Failures: 0, Errors: 0, Time elapsed: 0,046 sec
+------------- Standard Error -----------------
+Service 'Bloc' method 'init': precondition error
+  ==> reward == null
+Service 'Bloc' method 'init': precondition error
+  ==> reward == null
+Service 'Bloc' method 'init': precondition error
+  ==> type == null
+Service 'Bloc' method 'setType': precondition error
+  ==> type == null
+Service 'Bloc' method 'setType': postcondition error
+  ==> isDestructible(setType(r,B)) != isDestructible(B)
+Service 'Bloc' method 'setReward': precondition error
+  ==> reward == null
+Service 'Bloc' method 'init': precondition error
+  ==> type == null
+------------- ---------------- ---------------
+
+Testcase: test_pre_init_2 took 0,01 sec
+Testcase: test_pre_init_3 took 0 sec
+Testcase: test_post_init_1 took 0,001 sec
+Testcase: test_post_init_2 took 0 sec
+Testcase: test_post_init_3 took 0 sec
+Testcase: test_post_init_4 took 0,001 sec
+Testcase: test_pre_setType_1 took 0 sec
+Testcase: test_post_setReward_4 took 0 sec
+Testcase: test_post_setReward_5 took 0 sec
+Testcase: test_post_setReward_6 took 0,001 sec
+Testcase: test_post_setType_1 took 0 sec
+Testcase: test_post_setType_2 took 0,001 sec
+Testcase: test_post_setType_3 took 0 sec
+Testcase: test_post_setType_4 took 0,001 sec
+Testcase: test_pre_setReward_1 took 0 sec
+Testcase: test_post_setReward_1 took 0,002 sec
+Testcase: test_post_setReward_2 took 0 sec
+Testcase: test_post_setReward_3 took 0 sec
+Testcase: test_pre_init_1 took 0,001 sec

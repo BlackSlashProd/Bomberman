@@ -1,0 +1,38 @@
+Testsuite: tests.TerrainTestContrat
+Tests run: 9, Failures: 0, Errors: 0, Time elapsed: 0,009 sec
+------------- Standard Error -----------------
+Service 'Terrain' method 'init ': precondition error
+  ==> init : lignes < 6
+Service 'Terrain' method 'init ': precondition error
+  ==> init : colonnes < 6
+Service 'Terrain' method 'init ': precondition error
+  ==> init : lignes < 6
+Service 'Terrain' method 'init ': precondition error
+  ==> init : colonnes < 6
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : ligne > getNbLignes()
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : colonne > getNbColonnes()
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : ligne > getNbLignes()
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : colonne > getNbColonnes()
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : ligne < 1
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : colonne > getNbColonnes()
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : ligne > getNbLignes()
+Service 'Terrain' method 'getBloc ': precondition error
+  ==> getBloc : colonne < 1
+------------- ---------------- ---------------
+
+Testcase: test_pre_init_3 took 0 sec
+Testcase: test_post_init_1 took 0,001 sec
+Testcase: test_pre_init_1 took 0,001 sec
+Testcase: test_pre_init_2 took 0 sec
+Testcase: test_pre_getBloc_3 took 0,001 sec
+Testcase: test_pre_getBloc_4 took 0 sec
+Testcase: test_inv_getBloc_1 took 0,001 sec
+Testcase: test_pre_getBloc_1 took 0 sec
+Testcase: test_pre_getBloc_2 took 0,001 sec

@@ -1,0 +1,141 @@
+Service : Joueur
+Use : Terrain
+Types : int, string, boolean, Bloc::BlocReward
+
+Observators : 
+	getLigne : [Joueur] -> int
+	getColonne : [Joueur] -> int
+	getForce : [Joueur] -> int
+	passeMuraille : [Joueur] -> boolean
+	passeBombe : [Joueur] -> boolean
+	getInvulnerableStep : [Joueur] -> int
+	getNbBombePosable : [Joueur] -> int
+	isVivant : [Joueur] -> boolean
+	
+Constructors :
+	init : int x int x Terrain -> [Joueur]
+		pre init(i, j, t) require
+			2 <= i < Terrain::getNbLignes(t) AND
+			2 <= j < Terrain::getNbColonnes(t)
+			
+Operators :
+	setLigne : [Joueur] x int x Terrain -> [Joueur]
+		pre setLigne(i) require 2 <= i < Terrain::getNbLignes(t)
+	setColonne : [Joueur] x int x Terrain -> [Joueur]
+		pre setColonne(J, j) require 2 <= j < Terrain::getNbColonnes(t)
+	setForce : [Joueur] x int -> [Joueur]
+		pre setForce(J, f) require 3 <= f <= 11
+	setPasseMuraille : [Joueur] x boolean -> [Joueur]
+	setPasseBombe : [Joueur] x boolean -> [Joueur]
+	setInvulnerable : [Joueur] -> [Joueur]
+	decrementeInvulnerabilite : [Joueur] -> [Joueur]
+	setNbBombePosable : [Joueur] x int -> [Joueur]
+		pre setNbBombePosable(J, n) require n >= 0
+	setVivant : [Joueur] x boolean -> [Joueur]
+	addReward : [Joueur] x Bloc::BlocReward -> [Joueur]
+		
+Observations :
+	[invariants]
+		0 <= getInvulnerableStep(J) <= 100
+		3 <= getForce(J) <= 11
+		getNbBombePosable >= 0
+		
+	[init]
+		getLigne(init(i, j)) = i
+		getColonne(init(i, j)) = j
+		getForce(init(i, j)) = 3
+		passeMuraille(init(i, j)) = false
+		passeBombe(init(i, j)) = false
+		getNbBombePosable(init(i, j)) = 1
+		getInvulnerableStep(init(i, j)) = 0
+		isVivant(init(i, j)) = true
+		
+	[setLigne]
+		getLigne(setLigne(J, i, t)) = i
+		getColonne(setLigne(J, i, t)) = getColonne(J)
+		getForce(setLigne(J, i, t)) = getForce(J)
+		passeMuraille(setLigne(J, i, t)) = passeMuraille(J)
+		passeBombe(setLigne(J, i, t)) = passeBombe(J)
+		getInvulnerableStep(setLigne(J, i, t)) = getInvulnerableStep(J)
+		getNbBombePosable(setLigne(J, i, t)) = getNbBombePosable(J)
+		isVivant(setLigne(J, i, t)) = isVivant(J)
+		
+	[setColonne]
+		getLigne(setColonne(J, j, t)) = getLigne(J)
+		getColonne(setColonne(J, j, t)) = j
+		getForce(setColonne(J, j, t)) = getForce(J)
+		passeMuraille(setColonne(J, j, t)) = passeMuraille(J)
+		passeBombe(setColonne(J, j, t)) = passeBombe(J)
+		getInvulnerableStep(setColonne(J, j, t)) = getInvulnerableStep(J)
+		getNbBombePosable(setColonne(J, j, t)) = getNbBombePosable(J)
+		isVivant(setColonne(J, j, t)) = isVivant(J)
+		
+	[setForce]
+		getLigne(setForce(J, f)) = getLigne(J)
+		getColonne(setForce(J, f)) = getColonne(J)
+		getForce(setForce(J, f)) = f
+		passeMuraille(setForce(J, f)) = passeMuraille(J)
+		passeBombe(setForce(J, f)) = passeBombe(J)
+		getInvulnerableStep(setForce(J, f)) = getInvulnerableStep(J)
+		getNbBombePosable(setForce(J, f)) = getNbBombePosable(J)
+		isVivant(setForce(J, f)) = isVivant(J)
+		
+	[setPasseMuraille]
+		getLigne(setPasseMuraille(J, b)) = getLigne(J)
+		getColonne(setPasseMuraille(J, b)) = getColonne(J)
+		getForce(setPasseMuraille(J, b)) = getForce(J)
+		passeMuraille(setPasseMuraille(J, b)) = b
+		passeBombe(setPasseMuraille(J, b)) = passeBombe(J)
+		getInvulnerableStep(setPasseMuraille(J, b)) = getInvulnerableStep(J)
+		getNbBombePosable(setPasseMuraille(J, b)) = getNbBombePosable(J)
+		isVivant(setPasseMuraille(J, b)) = isVivant(J)
+		
+	[setPasseBombe]
+		getLigne(setPasseBombe(J, b)) = getLigne(J)
+		getColonne(setPasseBombe(J, b)) = getColonne(J)
+		getForce(setPasseBombe(J, b)) = getForce(J)
+		passeMuraille(setPasseBombe(J, b)) = passeMuraille(J)
+		passeBombe(setPasseBombe(J, b)) = b
+		getInvulnerableStep(setPasseBombe(J, b)) = getInvulnerableStep(J)
+		getNbBombePosable(setPasseBombe(J, b)) = getNbBombePosable(J)
+		isVivant(setPasseBombe(J, b)) = isVivant(J)
+		
+	[setInvulnerable]
+		getLigne(setPasseBombe(J)) = getLigne(J)
+		getColonne(setPasseBombe(J)) = getColonne(J)
+		getForce(setPasseBombe(J)) = getForce(J)
+		passeMuraille(setPasseBombe(J)) = passeMuraille(J)
+		passeBombe(setPasseBombe(J)) = passeBombe(J)
+		getInvulnerableStep(setPasseBombe(J)) = 100
+		getNbBombePosable(setPasseBombe(J)) = getNbBombePosable(J)
+		isVivant(setPasseBombe(J)) = isVivant(J)
+		
+	[setNbBombePosable]
+		getLigne(setNbBombePosable(J, n)) = getLigne(J)
+		getColonne(setNbBombePosable(J, n)) = getColonne(J)
+		getForce(setNbBombePosable(J, n)) = getForce(J)
+		passeMuraille(setNbBombePosable(J, n)) = passeMuraille(J)
+		passeBombe(setNbBombePosable(J, n)) = passeBombe(J)
+		getInvulnerableStep(setNbBombePosable(J, n)) = getInvulnerableStep(J)
+		getNbBombePosable(setNbBombePosable(J, n)) = n
+		isVivant(setNbBombePosable(J, n)) = isVivant(J)
+		
+	[setVivant]
+		getLigne(setVivant(J, b)) = getLigne(J)
+		getColonne(setVivant(J, b)) = getColonne(J)
+		getForce(setVivant(J, b)) = getForce(J)
+		passeMuraille(setVivant(J, b)) = passeMuraille(J)
+		passeBombe(setVivant(J, b)) = passeBombe(J)
+		getInvulnerableStep(setVivant(J, b)) = getInvulnerableStep(J)
+		getNbBombePosable(setVivant(J, b)) = getNbBombePosable(J)
+		isVivant(setVivant(J, b)) = b
+		
+	[addReward]
+		getLigne(addReward(J, r)) = getLigne(J)
+		getColonne(addReward(J, r)) = getColonne(J)
+		getForce(addReward(J, r)) = if (r = FireUp AND getForce(J) <= 11) then getForce(J) + 2 else getForce(J) end if
+		passeMuraille(addReward(J, r)) = if(r = WallPass) then else passeMuraille(J) end if
+		passeBombe(addReward(J, r)) = if(r = BombPass) then else passeBombe(J) end if
+		getInvulnerableStep(addReward(J, r)) = if(r = FireSuit) then 100 else getInvulnerableStep(J) end if
+		getNbBombePosable(addReward(J, r)) = if(r = BombUp) then getNbBombePosable(J) + 1 else getNbBombePosable(J) end if
+		isVivant(addReward(J, r)) = isVivant(J)

@@ -1,0 +1,249 @@
+%% Based on a TeXnicCenter-Template by Tino Weinkauf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,oneside,11pt]{article}
+% Alternative Options:
+%	Paper Size: a4paper / a5paper / b5paper / letterpaper / legalpaper / executivepaper
+% Duplex: oneside / twoside
+% Base Font Size: 10pt / 11pt / 12pt
+
+
+%% Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[francais]{babel} %francais, polish, spanish, ...
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage[top=2.7cm, bottom=2.7cm, left=3cm, right=3cm]{geometry}
+\usepackage{lmodern} %Type1-font for non-english texts and characters
+
+
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%For loading graphic files
+%\usepackage{subfig} %%Subfigures inside a figure
+%\usepackage{pst-all} %%PSTricks - not useable with pdfLaTeX
+
+%% Please note:
+%% Images can be included using \includegraphics{Dateiname}
+%% resp. using the dialog in the Insert menu.
+%% 
+%% The mode "LaTeX => PDF" allows the following formats:
+%%   .jpg  .png  .pdf  .mps
+%% 
+%% The modes "LaTeX => DVI", "LaTeX => PS" und "LaTeX => PS => PDF"
+%% allow the following formats:
+%%   .eps  .ps  .bmp  .pict  .pntg
+
+
+%% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amsfonts}
+
+
+%% Line Spacing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\singlespacing        %% 1-spacing (default)
+%\onehalfspacing       %% 1,5-spacing
+%\doublespacing        %% 2-spacing
+
+
+%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{a4wide} %%Smaller margins = more text per page.
+%\usepackage{fancyhdr} %%Fancy headings
+%\usepackage{longtable} %%For tables, that exceed one page
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Remarks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TODO:
+% 1. Edit the used packages and their options (see above).
+% 2. If you want, add a BibTeX-File to the project
+%    (e.g., 'literature.bib').
+% 3. Happy TeXing!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Options / Modifications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{options} %You need a file 'options.tex' for this
+%% ==> TeXnicCenter supplies some possible option files
+%% ==> with its templates (File | New from Template...).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagestyle{empty} %No headings for the first pages.
+
+
+%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ==> Write your text here or include other files.
+
+%% The simple version:
+\title{Projet CPS : Bomberman}
+\author{Alexis Deluze \& Clément Barbier}
+%\date{} %%If commented, the current date is used.
+\maketitle
+
+%% The nice version:
+%\input{titlepage} %%You need a file 'titlepage.tex' for this.
+%% ==> TeXnicCenter supplies a possible titlepage file
+%% ==> with its templates (File | New from Template...).
+
+
+%% Sommaire %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents %Table of contents
+\clearpage
+
+\pagestyle{plain} %Now display headings: headings / fancy / ...
+
+
+
+%% Chapters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ==> Write your text here or include other files.
+
+%\input{intro} %You need a file 'intro.tex' for this.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction}\label{intro}
+Le but du projet est de réaliser un clone simplifié du jeu \textbf{Bomberman} (de 1992) en s'appuyant sur le langage de spécification de services vu en cours. Le jeu sera ensuite soumis a une série de tests pour s'assurer de la robustesse et de la justesse du code de l'implémentation. Ces tests seront écrits en \textit{JUnit}. Pour montrer l'efficacité des tests, le jeu sera implémenté deux fois, avec d'un côté une implémentation respectant les contrats des services (et passant les tests), et de l'autre une implémentation dans laquelle des bugs ont été volontairement insérés. Cette seconde implémentation ne devra pas passer les tests et affichera des erreurs lorsque les contrats seront violés.
+\newline\newline
+\textbf{Lancement du projet :}\newline
+Compilation du projet : \texttt{ant compile}\newline
+Lancement du jeu (avec contrats) : \texttt{ant run}\newline
+Lancement du jeu (avec contrats) version buggée : \texttt{ant runbug}\newline
+Lancement des tests (avec contrats) : \texttt{ant test}\newline
+Lancement des tests (avec contrats) version buggée : \texttt{ant testbug}\newline
+Création de la distribution : \texttt{ant dist}\newline
+Nettoyage du projet : \texttt{ant clean}\newline
+\newline
+\textit{Remarque 1} : le lancement du jeu via \texttt{run} et \texttt{runbug} se fait sans l'IHM. Les actions du joueur sont alors aléatoires. Pour tester le jeu avec l'IHM, il faut l'importer dans \textit{eclipse}\newline
+\textit{Remarque 2} : il n'est pas possible de lancer le jeu ou les tests sans passer par les contrats. Certains objets sont créés dynamiquement dans notre programme (par exemple les Bombes), il aurait donc fallu faire 4 implémentations (normale, normale + contrats, buggée, buggée + contrats), ce que nous n'avons pas fait par souci de clareté du projet.
+
+\section{Spécification}\label{spec}
+
+Pour des raisons de clareté du rapport et de lisibilité des spécifications, nous avons préféré laisser ces dernières dans les fichiers texte séparés, dans le dossier \texttt{Spécifications} à la racine du projet.\newline\newline
+\indent{}Afin de définir au mieux nos services, nous avons choisi de réaliser un prototype du jeu avant d'écrire les spécifications. Cela nous a permis d'identifier rapidement les fonctions principales du programme et surtout d'avoir des services auquels nous n'avons jamais eu besoin de retoucher au fur et à mesure que le projet avancait. Le prototype a ensuite évolué avec l'écriture des spécifications, pour finir en programme complet avec une interface homme/machine illustrant le terrain de jeu.\newline\newline
+\indent{}Par souci de clareté du code, notament dans le service \textit{Moteur}, nous avons eu recours à des fonctions privées (et donc non visibles dans les spécifications). Ces fonctions ne sont appellées qu'une fois par tour de jeu, et uniquement dans la fonction principale du moteur de jeu : \texttt{step}.
+
+\newpage
+
+\section{Tests MBT}\label{mbt}
+
+Les tests ont été directement implémentés en JUnit et se lancent via la commande \texttt{ant test} à la racine du projet. Au vue du nombre de tests écrits, il n'était pas raisonable de les recopier dans le rapport. Tous les tests sont dans le package \texttt{tests} du projet (classes \texttt{Abstract\textit{Service}Test.java}). Les tests sont lancés sur les deux implémentations contractualisées du jeu (avec et sans bugs) et le résultat est enregistré au format textuel dans des fichiers nommés \texttt{test\_\textit{Service}<\_bug>.txt} dans le dossier \texttt{bomberman}.
+
+\section{Scénarios utilisateurs}\label{scenario}
+
+Plusieurs données ne sont pas testables dans nos scénarios utilisateur du fait des données aléatoires générées par le jeu (comme le placement des murs ou les actions du Kidnappeur et des Vilains).\newline\newline
+%\begin{flushleft}
+\subsection{Scénario 1}
+\noindent\textbf{Nom :} scénario1\newline
+\textbf{Objectif :} Une partie est lancée le joueur ne peut aller ni à gauche, ni en haut, mais il peut aller à droite et en bas. Le joueur reviens à sa position initiale.\newline
+\textbf{Préambule :} Moteur de jeu initialisé avec 500 pas, puis lancé.
+  \begin{itemize}\item[]M1 = init(500)\end{itemize}
+\textbf{Contenu :} Parcours = gauche,haut,droite,gauche,bas,haut
+  \begin{itemize}\item[]Sc1 =	step(step(step(step(step(M1, Action.Gauche), Action.Haut), Action.Droite), Action.Gauche), Action.Bas), Action.Haut)\end{itemize}
+\textbf{Oracle :}
+  \begin{itemize}\item[]inv 1 : getStepRestants() = 494
+	\item[]inv 2 : Joueur::getLigne(getJoueur()) = 2
+	\item[]inv 3 : Joueur::getColonne(getJoueur()) = 2
+	\item[]inv 4 : Terrain::getNbLignes(getTerrain()) = 13
+	\item[]inv 5 : Terrain::getNbColonnes(getTerrain()) = 15
+	\item[]inv 6 : getNbBombes() >= 0\end{itemize}
+
+\subsection{Scénario 2}
+\noindent\textbf{Nom :} scénario2\newline
+\textbf{Objectif :} Une partie est lancée le joueur pose une bombe, la bombe est sur le terrain.\newline
+\textbf{Préambule : }Moteur de jeu initialisé avec 500 pas, puis lancé.
+	\begin{itemize}\item[]M2 = init(500)\end{itemize}
+\textbf{Contenu :} Parcours = bombe
+	\begin{itemize}\item[]Sc2 =	step(M2, Action.Bombe)\end{itemize}
+\textbf{Oracle :}
+	\begin{itemize}\item[]inv 1 : getStepRestants() = 499
+	\item[]inv 2 : Joueur::getLigne(getJoueur()) = 2
+	\item[]inv 3 : Joueur::getColonne(getJoueur()) = 2
+	\item[]inv 4 : Terrain::getNbLignes(getTerrain()) = 13
+	\item[]inv 5 : Terrain::getNbColonnes(getTerrain()) = 15
+	\item[]inv 6 : getNbBombes() >= 1
+	\item[]inv 7 : bombeExiste(500) = true\end{itemize}
+
+\subsection{Scénario 3}
+\noindent\textbf{Nom :} scénario3\newline
+\textbf{Objectif :} Une partie est lancée le joueur pose une bombe qui explose au bout de 10 pas.\newline
+\textbf{Préambule :} Moteur de jeu initialisé avec 500 pas, puis lancé.
+	\begin{itemize}\item[]M3 = init(500)\end{itemize}
+\textbf{Contenu :} Parcours = bombe,rien,rien,rien,rien,rien,rien,rien,rien,rien,rien
+	\begin{itemize}\item[]Sc3 =	step(step(step(step(step(step(step(step(step(step(step(M3, Action.Bombe), Action.Rien), Action.Rien), Action.Rien), Action.Rien), Action.Rien), Action.Rien), Action.Rien), Action.Rien), Action.Rien), Action.Rien)\end{itemize}
+\textbf{Oracle :}
+	\begin{itemize}\item[]inv 1 : getStepRestants() = 489
+	\item[]inv 2 : Joueur::getLigne(getJoueur()) = 2
+	\item[]inv 3 : Joueur::getColonne(getJoueur()) = 2
+	\item[]inv 4 : Terrain::getNbLignes(getTerrain()) = 13
+	\item[]inv 5 : Terrain::getNbColonnes(getTerrain()) = 15
+	\item[]inv 6 : getNbBombes() >= 0
+	\item[]inv 7 : bombeExiste(500) = false\end{itemize}
+%\end{flushleft}
+
+\section{Traces de l'implémentation buggée}\label{bug}
+
+Afin de prouver que nos tests sont pertinants et qu'ils couvrent une majorité de problèmes potentiels, nous avons écrit une implémentation du jeu en y incluant des bugs. Ces bugs doivent empêcher les tests de passer.\newline\newline
+Obtention des traces : commande \texttt{ant runbug}\newline\newline
+Un exemple d'execution est disponible dans le fichier \texttt{trace\_implem\_bug.txt} à la racine du projet.
+
+\section{Conclusion}\label{conclusion}
+
+Ce projet nous a permis d'apprendre a construire une application découpée en plusieurs composants en se basant sur une série de contrats (voir section \ref{spec}) et de tests (voir sections \ref{mbt} et \ref{scenario}) qui s'avèrent longs et fastidieux à mettre en place mais qui garantissent une certaine robustesse du code.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY AND OTHER LISTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A small distance to the other stuff in the table of contents (toc)
+%\addtocontents{toc}{\protect\vspace*{\baselineskip}}
+
+%% The Bibliography
+%% ==> You need a file 'literature.bib' for this.
+%% ==> You need to run BibTeX for this (Project | Properties... | Uses BibTeX)
+%\addcontentsline{toc}{chapter}{Bibliography} %'Bibliography' into toc
+%\nocite{*} %Even non-cited BibTeX-Entries will be shown.
+%\bibliographystyle{alpha} %Style of Bibliography: plain / apalike / amsalpha / ...
+%\bibliography{literature} %You need a file 'literature.bib' for this.
+
+%% The List of Figures
+%\clearpage
+%\addcontentsline{toc}{chapter}{Liste des figures}
+%\listoffigures
+
+%% The List of Tables
+%\clearpage
+%\addcontentsline{toc}{chapter}{Liste des tableaux}
+%\listoftables
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \appendix
+%% ==> Write your text here or include other files.
+
+%\input{FileName} %You need a file 'FileName.tex' for this.
+
+
+\end{document}
