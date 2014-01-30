@@ -1,0 +1,9 @@
+Service : Kidnappeur
+Use : Terrain
+Refine : Joueur
+
+Constructors :
+	init : int x int x Terrain -> [Kidnappeur]
+		pre init(i, j, t) require
+			2 <= i < Terrain::getNbLignes(t) AND
+			2 <= j < Terrain::getNbColonnes(t)

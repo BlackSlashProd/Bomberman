@@ -1,0 +1,307 @@
+Service : Moteur
+Use : Terrain, Joueur, Kidnappeur, Vilain, Bloc
+Types : int, Set, boolean, enum Action {Haut, Bas, Droite, Gauche, Rien, Bombe}, enum Gagnant {Joueur, Kidnappeur, Aucun}
+
+Observators : 
+	getJoueur : [Moteur] -> Joueur
+	getKidnappeur : [Moteur] -> Kidnappeur
+	getNbBombes : [Moteur] -> int
+	getBombesNum : [Moteur] -> Set<int>
+	bombeExiste : [Moteur] x int -> boolean
+	getBombe : [Moteur] x int -> Bombe
+		pre getBombe(M, n) require bombeExiste(M, n)
+	getNbVilains : [Moteur] -> int
+	getVilainsNum : [Moteur] -> Set<int>
+	vilainExiste : [Moteur] x int -> boolean
+	getVilain : [Moteur] x int -> Vilain
+		pre getVilain(M, n) require vilainExiste(M, n)
+	getTerrain : [Moteur] -> Terrain
+	getStepRestants : [Moteur] -> int
+	isGameOver : [Moteur] -> boolean
+	getGagnant : [Moteur] -> Gagnant
+		pre getGagnant(M) require isGameOver(M)
+	isInRange : [Moteur] x int x int x int -> boolean
+		pre isInRange(M, i, j, b) require bombeExiste(M, b)
+	hasRemovedExplosions : [Moteur] -> boolean
+	
+Constructors :
+	init : int -> [Moteur]
+		pre init(step) require step > 0
+				
+Operators :
+	step : [Moteur] x Action -> [Moteur]
+		pre step(M, a) require a != null AND (! isGameOver(M)) AND hasRemovedExplosions(M)
+	removeExplosions : [Moteur] -> [Moteur]
+	setRemovedExplosions : [Moteur] x boolean -> [Moteur]
+		
+Observations :
+	[invariants]
+		getStepRestants(M) >= 0
+		(min) isGameOver(M) = (! Joueur::isVivant(getJoueur(M))) OR (getStepRestants(M) = 0) OR (! Kidnappeur::isVivant(getKidnappeur(M)))
+		(min) getNbBombes(M) = |getBombesNum(M)|
+		(min) getNbVilains(M) = |getVilainsNum(M)|
+		(min) bombeExiste(M, b) = b appartient à getBombesNum(M)
+		(min) vilainExiste(M, n) = n appartient à getVilainsNum(M)
+		(min) (getGagnant(M) = Gagnant.Joueur) = !Kidnappeur::isVivant(getKidnappeur(M)) AND Joueur::isVivant(getJoueur(M))
+		(min) (getGagnant(M) = Gagnant.Kidnappeur) = Kidnappeur::isVivant(getKidnappeur(M)) AND !Joueur::isVivant(getJoueur(M))
+		(min) (getGagnant(M) = Gagnant.Aucun) = !Joueur::isVivant(getJoueur(M)) AND !Kidnappeur::isVivant(getKidnappeur(M))
+		
+	[init]
+		getStepRestants(init(s)) = s
+		Joueur::getLigne(getJoueur(init(s))) = 2
+		Joueur::getColonne(getJoueur(init(s))) = 2
+		Kidnappeur::getLigne(getKidnappeur(init(s))) = Terrain::getNbLignes()-1
+		Kidnappeur::getColonne(getKidnappeur(init(s))) = Terrain::getNbColonnes()-1
+		getBombesNum(init(s)) = null
+		getVilainsNum(init(s)) = {1, 2, 3, 4}
+		Terrain::getNbLignes(getTerrain(init(s))) = 13
+		Terrain::getNbColonnes(getTerrain(init(s))) = 15
+		hasRemovedExplosions(init(s)) = true
+		
+	[removeExplosions]
+		pour tout i : 1 <= i <= Terrain::getNbLignes(getTerrain(removeExplosion(M))),
+		pour tout j : 1 <= j <= Terrain::getNbColonnes(getTerrain(removeExplosion(M)),
+			Terrain::getType(Terrain::getBloc(getTerrain(removeExplosion(M)), i, j)) != Bloc::BlocType.Explosion
+		getJoueur(removeExplosions(M)) = getJoueur(M)
+		getVilainsNum(removeExplosions(M)) = getVilainsNum(M)
+		getVilain(removeExplosions(M), n) = getVilain(M, n)
+		getKidnappeur(removeExplosions(M)) = getKidnappeur(M)
+		getBombesNum(removeExplosions(M)) = getBombesNum(M)
+		getStepRestant(removeExplosions(M)) = getStepRestant(M)
+		getTerrain(removeExplosions(M)) = getTerrain(M)
+		getBombe(removeExplosions(M), n) = getBombe(M, n)
+		hasRemovedExplosions(removeExplosion(M)) = true
+		
+	[setRemovedExplosions]
+		getJoueur(setRemovedExplosions(M, b)) = getJoueur(M)
+		getVilainsNum(setRemovedExplosions(M, b)) = getVilainsNum(M)
+		getVilain(setRemovedExplosions(M, b), n) = getVilain(M, n)
+		getKidnappeur(setRemovedExplosions(M, b)) = getKidnappeur(M)
+		getBombesNum(setRemovedExplosions(M, b)) = getBombesNum(M)
+		getStepRestant(setRemovedExplosions(M, b)) = getStepRestant(M)
+		getTerrain(setRemovedExplosions(M, b)) = getTerrain(M)
+		getBombe(setRemovedExplosions(M, b), n) = getBombe(M, n)
+		hasRemovedExplosions(setRemovedExplosions(M, b)) = b
+		
+	[step]
+		// compteur de tour de jeu
+		getStepRestants(step(M, a)) = getStepRestants(M) - 1
+		
+		// verification des observateurs
+		getJoueur(step(M, Action.Haut)) = getJoueur(M)
+		getKidnappeur(step(M, Action.Haut)) = getKidnappeur(M)
+		getTerrain(step(M, Action.Haut)) = getTerrain(M)
+		hasRemovedExplosions(step(M, Action.Haut)) = false
+		
+		////////////////////////////////////////////////////////////////////////// Gestion des explosions
+		pour tout b de 1 à getNbBombes(M) :
+			// explosion du Joueur
+			if (isInRange(M, Joueur::getLigne(getJoueur(M)), Joueur::getColonne(getJoueur(M)), b) AND Bombe::getTimer(b) = 0 AND Joueur::isVivant(getJoueur(M)))
+			then
+				getBombesNum(step(M, a)) = getBombesNum(M) \ {b}
+				!Joueur::isVivant(getJoueur(step(M, a)))
+				Bloc::getType(Terrain::getBloc(getTerrain(step(M, a)), Joueur::getLigne(getJoueur(step(M, a))), Joueur::getColonne(getJoueur(step(M, a))))) = Bloc::BlocType.Explosion
+			end if
+			// explosion du Kidnappeur
+			if (isInRange(M, Kidnappeur::getLigne(getKidnappeur(M)), Kidnappeur::getColonne(getKidnappeur(M)), b) AND Bombe::getTimer(b) = 0 AND Kidnappeur::isVivant(getKidnappeur(M)))
+			then
+				getBombesNum(step(M, a)) = getBombesNum(M) \ {b}
+				!Kidnappeur::isVivant(getKidnappeur(step(M, a)))
+				Bloc::getType(Terrain::getBloc(getTerrain(step(M, a)), Kidnappeur::getLigne(getJoueur(step(M, a))), Kidnappeur::getColonne(getJoueur(step(M, a))))) = Bloc::BlocType.Explosion
+			end if
+			// explosion des Vilains
+			pour tout v de 1 à getNbVilains(M) :
+				if (isInRange(M, Vilain::getLigne(getVilain(M, v)), Vilain::getColonne(getVilain(M, v)), b) AND Bombe::getTimer(b) = 0)
+				then
+					getBombesNum(step(M, a)) = getBombesNum(M) \ {b}
+					Bloc::getType(Terrain::getBloc(getTerrain(step(M, a)), Vilain::getLigne(getVilain((step(M, a)), a)), Vilain::getColonne(getVilain((step(M, a)), a))) = Bloc::BlocType.Explosion
+					getVilainsNum(step(M, a)) = getVilainsNum(M) \ {v}
+				else
+					getVilainsNum(step(M, a)) = getVilainsNum(M)
+				end if
+			// explosion des MurBrique et des PowerUps (si le bloc est Vide)
+			pour tout i appartenant à Terrain::getNbLignes(M),
+			pour tout j appartenant à Terrain::getNbColonnes(M),
+			if(isInRange(M, Bloc::getLigne(Terrain::getBloc(getTerrain(M), i, j)), Bloc::getLigne(Terrain::getBloc(getTerrain(M), i, j)), b)
+				AND Bombe::getTimer(b) = 0 AND Bloc::getType(Terrain::getBloc(getTerrain(M), i, j)) = Bloc::BlocType.MurBrique
+				OR Bloc::getType(Terrain::getBloc(getTerrain(M), i, j)) = Bloc::BlocType.Vide AND Bloc::getReward(Terrain::getBloc(getTerrain(M), i, j)) != Bloc::Reward.Rien)
+			then
+				Bloc::getType(Terrain::getBloc(getTerrain(step(M, a)), i, j)) = Bloc::BlocType.Explosion
+			else
+				Bloc::getType(Terrain::getBloc(getTerrain(step(M, a)), i, j)) = Bloc::getType(Terrain::getBloc(getTerrain(M), i, j))
+			end if
+			// décrémentation du timer des bombes
+			if (Bombe::getTimer(b) > 0)
+			then
+				Bombe::getTimer(getBombe(step(M, a), b)) = Bombe::getTimer(getBombe(M, b)) - 1
+			end if
+		
+		////////////////////////////////////////////////////////////////////////// Gestion du Joueur
+		// deplacement du Joueur en Haut
+		if (Bloc::getType(Joueur::getLigne(getJoueur(M)) - 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Joueur::getLigne(getJoueur(M)) - 1) = Bloc::BlocType.MurBrique AND Joueur::passeMuraille(getJoueur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Joueur::getLigne(getJoueur(M)) - 1) AND
+			(Bombe::getColonne(getBombe(M, n)) = Joueur::getColonne(getJoueur(M))) AND Joueur::passeBombe(getJoueur(M))))
+		then
+			Joueur::getLigne(getJoueur(step(M, Action.Haut))) = min(2, Joueur::getLigne(getJoueur(M)) - 1)
+		else
+			Joueur::getLigne(getJoueur(step(M, Action.Haut))) = Joueur::getLigne(getJoueur(M))
+		end if
+		
+		// deplacement du Joueur en Bas
+		if (Bloc::getType(Joueur::getLigne(getJoueur(M)) + 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Joueur::getLigne(getJoueur(M)) + 1) = Bloc::BlocType.MurBrique AND Joueur::passeMuraille(getJoueur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Joueur::getLigne(getJoueur(M)) + 1) AND
+			(Bombe::getColonne(getBombe(M, n)) = Joueur::getColonne(getJoueur(M))) AND Joueur::passeBombe(getJoueur(M))))
+		then
+			Joueur::getLigne(getJoueur(step(M, Action.Bas))) = max(Terrain::getNbLignes(getTerrain(M)) - 2, Joueur::getLigne(getJoueur(M)) + 1)
+		else
+			Joueur::getLigne(getJoueur(step(M, Action.Bas))) = Joueur::getLigne(getJoueur(M))
+		end if
+		
+		// deplacement du Joueur à Gauche
+		if (Bloc::getType(Joueur::getColonne(getJoueur(M)) - 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Joueur::getColonne(getJoueur(M)) - 1) = Bloc::BlocType.MurBrique AND Joueur::passeMuraille(getJoueur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Joueur::getLigne(getJoueur(M))) AND
+			(Bombe::getColonne(getBombe(M, n) - 1) = Joueur::getColonne(getJoueur(M)) - 1) AND Joueur::passeBombe(getJoueur(M))))
+		then
+			Joueur::getColonne(getJoueur(step(M, Action.Gauche))) = min(2, Joueur::getColonne(getJoueur(M)) - 1)
+		else
+			Joueur::getColonne(getJoueur(step(M, Action.Gauche))) = Joueur::getColonne(getJoueur(M))
+		end if
+		
+		// deplacement du Joueur à Droite
+		if (Bloc::getType(Joueur::getColonne(getJoueur(M)) + 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Joueur::getColonne(getJoueur(M)) + 1) = Bloc::BlocType.MurBrique AND Joueur::passeMuraille(getJoueur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Joueur::getLigne(getJoueur(M))) AND
+			(Bombe::getColonne(getBombe(M, n) + 1) = Joueur::getColonne(getJoueur(M)) + 1) AND Joueur::passeBombe(getJoueur(M))))
+		then
+			Joueur::getColonne(getJoueur(step(M, Action.Droite))) = max(Terrain::getNbColonnes(getTerrain(M)) - 2, Joueur::getColonne(getJoueur(M)) + 1)
+		else
+			Joueur::getColonne(getJoueur(step(M, Action.Droite))) = Joueur::getColonne(getJoueur(M)) 
+		end if
+		
+		// le Joueur pose une bombe
+		getJoueur(step(M, Action.Bombe)) AND (Joueur::getNbBombePosable(getJoueur(M)) > 0) ->
+			il existe un num n'appartenant pas à getBombesNum(M) tel que
+				getBombe(step(M, Action.Bombe), num) = Bombe::init(num, Joueur::getLigne(getJoueur(M)), Joueur::getColonne(getJoueur(M)), Joueur::getForce(getJoueur(M)), getTerrain(M))
+				AND |getBombesNum(step(M, Action.Bombe))| = |getBombesNum(M)| + 1
+		
+		// le Joueur ne fait rien
+		getJoueur(step(M, Action.Rien)) ->
+			Joueur::getLigne(getJoueur(step(M, Action.Rien))) = Joueur::getLigne(getJoueur(M)) AND
+			Joueur::getColonne(getJoueur(step(M, Action.Rien))) = Joueur::getColonne(getJoueur(M))
+		
+		////////////////////////////////////////////////////////////////////////// Gestion du Kidnappeur
+		soit ak appartenant à Action
+		// deplacement du Kidnappeur en Haut
+		if (ak = Action.Haut AND Bloc::getType(Kidnappeur::getLigne(getKidnappeur(M)) - 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Kidnappeur::getLigne(getKidnappeur(M)) - 1) = Bloc::BlocType.MurBrique AND Kidnappeur::passeMuraille(getKidnappeur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Kidnappeur::getLigne(getKidnappeur(M)) - 1) AND
+			(Bombe::getColonne(getBombe(M, n)) = Kidnappeur::getColonne(getKidnappeur(M))) AND Kidnappeur::passeBombe(getKidnappeur(M))))
+		then
+			Kidnappeur::getLigne(getKidnappeur(step(M, a))) = min(2, Kidnappeur::getLigne(getKidnappeur(M)) - 1)
+		else
+			Kidnappeur::getLigne(getKidnappeur(step(M, a))) = Kidnappeur::getLigne(getKidnappeur(M))
+		end if
+		
+		// deplacement du Kidnappeur en Bas
+		if (ak = Action.Bas AND Bloc::getType(Kidnappeur::getLigne(getKidnappeur(M)) + 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Kidnappeur::getLigne(getKidnappeur(M)) + 1) = Bloc::BlocType.MurBrique AND Kidnappeur::passeMuraille(getKidnappeur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Kidnappeur::getLigne(getKidnappeur(M)) + 1) AND
+			(Bombe::getColonne(getBombe(M, n)) = Kidnappeur::getColonne(getKidnappeur(M))) AND Kidnappeur::passeBombe(getKidnappeur(M))))
+		then
+			Kidnappeur::getLigne(getKidnappeur(step(M, a))) = max(Terrain::getNbLignes(getTerrain(M)) - 2, Kidnappeur::getLigne(getKidnappeur(M)) + 1)
+		else
+			Kidnappeur::getLigne(getKidnappeur(step(M, a))) = Kidnappeur::getLigne(getKidnappeur(M))
+		end if
+		
+		// deplacement du Kidnappeur à Gauche
+		if (ak = Action.Gauche AND Bloc::getType(Kidnappeur::getColonne(getKidnappeur(M)) - 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Kidnappeur::getColonne(getKidnappeur(M)) - 1) = Bloc::BlocType.MurBrique AND Kidnappeur::passeMuraille(getKidnappeur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Kidnappeur::getLigne(getKidnappeur(M))) AND
+			(Bombe::getColonne(getBombe(M, n) - 1) = Kidnappeur::getColonne(getKidnappeur(M)) - 1) AND Kidnappeur::passeBombe(getKidnappeur(M))))
+		then
+			Kidnappeur::getColonne(getKidnappeur(step(M, a))) = min(2, Kidnappeur::getColonne(getKidnappeur(M)) - 1)
+		else
+			Kidnappeur::getColonne(getKidnappeur(step(M, a))) = Kidnappeur::getColonne(getKidnappeur(M))
+		end if
+		
+		// deplacement du Kidnappeur à Droite
+		if (ak = Action.Droite AND Bloc::getType(Kidnappeur::getColonne(getKidnappeur(M)) + 1) = Bloc::BlocType.Vide OR
+			Bloc::getType(Kidnappeur::getColonne(getKidnappeur(M)) + 1) = Bloc::BlocType.MurBrique AND Kidnappeur::passeMuraille(getKidnappeur(M)) OR
+			(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Kidnappeur::getLigne(getKidnappeur(M))) AND
+			(Bombe::getColonne(getBombe(M, n) + 1) = Kidnappeur::getColonne(getKidnappeur(M)) + 1) AND Kidnappeur::passeBombe(getKidnappeur(M))))
+		then
+			Kidnappeur::getColonne(getKidnappeur(step(M, a))) = max(Terrain::getNbColonnes(getTerrain(M)) - 2, Kidnappeur::getColonne(getKidnappeur(M)) + 1)
+		else
+			Kidnappeur::getColonne(getKidnappeur(step(M, a))) = Kidnappeur::getColonne(getKidnappeur(M)) 
+		end if
+		
+		// le Kidnappeur pose une bombe
+		ak = Action.Bombe AND (Kidnappeur::getNbBombePosable(getKidnappeur(M)) > 0) ->
+			il existe un num n'appartenant pas à getBombesNum(M) tel que
+				getBombe(step(M, Action.Bombe), num) = Bombe::init(num, Kidnappeur::getLigne(getKidnappeur(M)), Kidnappeur::getColonne(getKidnappeur(M)), Kidnappeur::getForce(getKidnappeur(M)), getTerrain(M))
+				AND |getBombesNum(step(M, Action.Bombe))| = |getBombesNum(M)| + 1
+		
+		// le Kidnappeur ne fait rien
+		ak = Action.Rien ->
+			Kidnappeur::getLigne(getKidnappeur(step(M, Action.Rien))) = Kidnappeur::getLigne(getKidnappeur(M)) AND
+			Kidnappeur::getColonne(getKidnappeur(step(M, Action.Rien))) = Kidnappeur::getColonne(getKidnappeur(M))
+		
+		////////////////////////////////////////////////////////////////////////// Gestion des Vilains
+		pour tout v de 1 à getNbVilains(M) :
+			soit av appartenant à Action \ {Action.Rien, Action.Bombe}
+			// deplacement du Vilain en Haut
+			if (av = Action.Haut AND Bloc::getType(Vilain::getLigne(getVilain(M, v)) - 1) = Bloc::BlocType.Vide OR
+				Bloc::getType(Vilain::getLigne(getVilain(M, v)) - 1) = Bloc::BlocType.MurBrique AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+				(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Vilain::getLigne(getVilain(M, v)) - 1) AND
+				(Bombe::getColonne(getBombe(M, n)) = Vilain::getColonne(getVilain(M, v))) AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+			then
+				Vilain::getLigne(getVilain(step(M, a), v)) = min(2, Vilain::getLigne(getVilain(M, v)) - 1)
+			else
+				Vilain::getLigne(getVilain(step(M, a), v)) = Vilain::getLigne(getVilain(M, v))
+			end if
+			
+			// deplacement du Vilain en Bas
+			if (av = Action.Bas AND Bloc::getType(Vilain::getLigne(getVilain(M, v)) + 1) = Bloc::BlocType.Vide OR
+				Bloc::getType(Vilain::getLigne(getVilain(M, v)) + 1) = Bloc::BlocType.MurBrique AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+				(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Vilain::getLigne(getVilain(M, v)) + 1) AND
+				(Bombe::getColonne(getBombe(M, n)) = Vilain::getColonne(getVilain(M, v))) AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+			then
+				Vilain::getLigne(getVilain(step(M, a), v)) = max(Terrain::getNbLignes(getTerrain(M)) - 2, Vilain::getLigne(getVilain(M, v)) + 1)
+			else
+				Vilain::getLigne(getVilain(step(M, a), v)) = Vilain::getLigne(getVilain(M, v))
+			end if
+			
+			// deplacement du Vilain à Gauche
+			if (av = Action.Gauche AND Bloc::getType(Vilain::getColonne(getVilain(M, v)) - 1) = Bloc::BlocType.Vide OR
+				Bloc::getType(Vilain::getColonne(getVilain(M, v)) - 1) = Bloc::BlocType.MurBrique AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+				(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Vilain::getLigne(getVilain(M, v))) AND
+				(Bombe::getColonne(getBombe(M, n) - 1) = Vilain::getColonne(getVilain(M, v)) - 1) AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+			then
+				Vilain::getColonne(getVilain(step(M, a), v)) = min(2, Vilain::getColonne(getVilain(M, v)) - 1)
+			else
+				Vilain::getColonne(getVilain(step(M, a), v)) = Vilain::getColonne(getVilain(M, v))
+			end if
+			
+			// deplacement du Vilain à Droite
+			if (av = Action.Droite AND Bloc::getType(Vilain::getColonne(getVilain(M, v)) + 1) = Bloc::BlocType.Vide OR
+				Bloc::getType(Vilain::getColonne(getVilain(M, v)) + 1) = Bloc::BlocType.MurBrique AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+				(bombeExiste(M, n) AND (Bombe::getLigne(getBombe(M, n)) = Vilain::getLigne(getVilain(M, v))) AND
+				(Bombe::getColonne(getBombe(M, n) + 1) = Vilain::getColonne(getVilain(M, v)) + 1) AND Vilain::getType(getVilain(M, v)) = Vilain::TypeVilain.FantomeBleu OR
+			then
+				Vilain::getColonne(getVilain(step(M, a), v)) = max(Terrain::getNbColonnes(getTerrain(M)) - 2, Vilain::getColonne(getVilain(M, v)) + 1)
+			else
+				Vilain::getColonne(getVilain(step(M, a), v)) = Vilain::getColonne(getVilain(M, v)) 
+			end if
+
+			// manger Joueur/Kidnappeur
+			if (Vilain::getLigne(getVilain(step(M,a)), v) = Joueur::getLigne(getJoueur(step(M,a))) AND Vilain::getColonne(getVilain(step(M,a)), v) = Joueur::getColonne(getJoueur(step(M,a))))
+			then
+				Joueur::setVivant(getJoueur(step(M,a)), false)
+			end if
+			if (Vilain::getLigne(getVilain(step(M,a)), v) = Kidnappeur::getLigne(getKidnappeur(step(M,a))) AND Vilain::getColonne(getVilain(step(M,a)), v) = Kidnappeur::getColonne(getKidnappeur(step(M,a))))
+			then
+				Kidnappeur::setVivant(getKidnappeur(step(M,a)), false)
+			end if
